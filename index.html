@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教學遊戲資源網</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap');
+
+      :root {
+        --primary-color: #444444; 
+        --background-color: #FDFBF8;
+        --card-bg: rgba(255, 255, 255, 0.55); 
+        --card-border: rgba(255, 255, 255, 0.4);
+        --text-color-primary: #1d1d1f; 
+        --text-color-secondary: #5a5a5f; 
+        --input-bg: rgba(235, 235, 240, 0.6);
+        --shadow-color: rgba(0, 0, 0, 0.1);
+        --control-border-radius: 14px;
+      }
+    
+      * { box-sizing: border-box; }
+
+      body {
+        font-family: 'Inter', 'Noto Sans TC', sans-serif;
+        background-color: var(--background-color);
+        color: var(--text-color-primary);
+        margin: 0;
+        padding: 20px;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background-image: url('https://images.unsplash.com/photo-1707248985080-954ad8466006?q=80&w=2940&auto=format&fit=crop');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+      }
+      
+      .container { 
+          max-width: 1200px;
+          margin: 0 auto; 
+          padding: 0 20px;
+      }
+      
+      .header { 
+          text-align: center; 
+          margin-bottom: 50px; 
+      }
+
+      h1 {
+        font-weight: 500;
+        font-size: 3em;
+        color: var(--text-color-primary);
+        text-shadow: 0 0 3px rgba(0, 0, 0, 0.3), 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+      
+      .game-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+        padding-bottom: 40px; /* 增加底部內邊距，避免內容太貼近底部 */
+      }
+
+      .card {
+        background: var(--card-bg);
+        backdrop-filter: blur(30px) saturate(180%);
+        -webkit-backdrop-filter: blur(30px) saturate(180%);
+        border-radius: 24px; 
+        border: 1px solid var(--card-border);
+        box-shadow: 0 10px 30px var(--shadow-color);
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 180px;
+        transition: all 0.3s ease-out;
+      }
+
+      .card:hover {
+        transform: translateY(-8px) scale(1.03); 
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      }
+      
+      .game-title {
+        font-size: 1.5em;
+        font-weight: 600;
+        color: var(--text-color-primary);
+        margin: 0 0 20px 0;
+      }
+      
+      .btn-glass {
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: var(--text-color-secondary);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        padding: 14px 22px;
+        border-radius: var(--control-border-radius);
+        text-decoration: none;
+        font-weight: 600;
+        cursor: pointer;
+        font-size: 1em;
+        text-align: center;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
+
+      .btn-glass:hover {
+        background: rgba(255, 255, 255, 0.4);
+        color: var(--text-color-primary);
+        transform: scale(1.05);
+        box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+      }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <h1>教學遊戲資源網</h1>
+        </header>
+
+        <main class="game-grid">
+            
+            <div class="card">
+                <h2 class="game-title">我的好朋友聚會策劃師</h2>
+                <a href="https://essay-correcting-ai.my.canva.site/dags6yo-nlk" target="_blank" class="btn-glass">開始遊戲</a>
+            </div>
+
+            <div class="card">
+                <h2 class="game-title">尋訪千塘鄉~埤塘守護者</h2>
+                <a href="https://ayjong.my.canva.site/pitang-knowledge-encyclopedia" target="_blank" class="btn-glass">開始遊戲</a>
+            </div>
+
+            <div class="card">
+                <h2 class="game-title">新希望的奇幻之旅</h2>
+                <a href="https://ai345.my.canva.site/114ch201" target="_blank" class="btn-glass">開始遊戲</a>
+            </div>
+
+            <div class="card">
+                <h2 class="game-title">古文解謎之旅</h2>
+                <a href="https://snowball18.my.canva.site/dags6zfk5xy" target="_blank" class="btn-glass">開始遊戲</a>
+            </div>
+
+            <div class="card">
+                <h2 class="game-title">形容詞子句</h2>
+                <a href="https://rubyliu.my.canva.site/dags6-tluq" target="_blank" class="btn-glass">開始遊戲</a>
+            </div>
+
+            <div class="card">
+                <h2 class="game-title">生命奇遇記：地球小尖兵養成計畫</h2>
+                <a href="https://shenao.my.canva.site/dags6ytpzc0" target="_blank" class="btn-glass">開始遊戲</a>
+            </div>
+            
+            <div class="card">
+                <h2 class="game-title">雪梨親子旅遊</h2>
+                <a href="https://bearpan9.my.canva.site/dags62nq40u" target="_blank" class="btn-glass">開始遊戲</a>
+            </div>
+
+            <div class="card">
+                <h2 class="game-title">大坑步道探險家</h2>
+                <a href="https://c-f-chuo-s-class.my.canva.site/dags6x37aew" target="_blank" class="btn-glass">開始遊戲</a>
+            </div>
+
+            <div class="card">
+                <h2 class="game-title">節慶特色遊戲</h2>
+                <a href="https://fongjean0213.my.canva.site/dags628etc8" target="_blank" class="btn-glass">開始遊戲</a>
+            </div>
+
+            <div class="card">
+                <h2 class="game-title">AI 教育先鋒 Gemini & NotebookLM 實戰演練</h2>
+                <a href="https://bearitw.my.canva.site/gemini-notebooklm" target="_blank" class="btn-glass">開始遊戲</a>
+            </div>
+
+        </main>
+    </div>
+    
+</body>
+</html>
