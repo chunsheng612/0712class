@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>教學遊戲資源網</title>
+    <title>教學資源網</title>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap');
 
       :root {
         --primary-color: #444444; 
         --background-color: #FDFBF8;
-        --card-bg: rgba(255, 255, 255, 0.55); 
+        --card-bg: rgba(255, 255, 255, 0.6); 
         --card-border: rgba(255, 255, 255, 0.4);
         --text-color-primary: #1d1d1f; 
         --text-color-secondary: #5a5a5f; 
@@ -43,7 +43,7 @@
       
       .header { 
           text-align: center; 
-          margin-bottom: 50px; 
+          margin-bottom: 25px; 
       }
 
       h1 {
@@ -53,7 +53,43 @@
         text-shadow: 0 0 3px rgba(0, 0, 0, 0.3), 0 2px 5px rgba(0, 0, 0, 0.2);
       }
       
-      .game-grid {
+      .tabs-nav {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 40px;
+      }
+
+      .tab-btn {
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: var(--text-color-secondary);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        padding: 12px 25px;
+        border-radius: var(--control-border-radius);
+        font-weight: 600;
+        cursor: pointer;
+        font-size: 1.1em;
+        transition: all 0.3s ease;
+      }
+      
+      .tab-btn.active, .tab-btn:hover {
+        background: rgba(255, 255, 255, 0.5);
+        color: var(--text-color-primary);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+      }
+
+      .content-section {
+        display: none;
+      }
+      .content-section.active {
+        display: block;
+      }
+
+      .grid-layout {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 25px;
@@ -71,7 +107,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        min-height: 180px;
+        min-height: 220px; /* 稍微增加最小高度以容納說明文字 */
         transition: all 0.3s ease-out;
       }
 
@@ -80,11 +116,19 @@
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
       }
       
-      .game-title {
+      .card-title {
         font-size: 1.5em;
         font-weight: 600;
         color: var(--text-color-primary);
-        margin: 0 0 20px 0;
+        margin: 0 0 15px 0;
+      }
+
+      .card-description {
+        font-size: 0.95em;
+        color: var(--text-color-secondary);
+        line-height: 1.6;
+        margin-bottom: 20px;
+        flex-grow: 1;
       }
       
       .btn-glass {
@@ -102,6 +146,7 @@
         font-size: 1em;
         text-align: center;
         transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        margin-top: auto;
       }
 
       .btn-glass:hover {
@@ -117,98 +162,190 @@
 
     <div class="container">
         <header class="header">
-            <h1>教學遊戲資源網</h1>
+            <h1>教學資源網</h1>
         </header>
 
-        <main class="game-grid">
-            
-            <div class="card">
-                <h2 class="game-title">我的好朋友聚會策劃師</h2>
-                <a href="https://essay-correcting-ai.my.canva.site/dags6yo-nlk" target="_blank" class="btn-glass">開始遊戲</a>
-            </div>
+        <nav class="tabs-nav">
+            <button id="btn-games" class="tab-btn">教育遊戲</button>
+            <button id="btn-chatbots" class="tab-btn">教育AI ChatBOT</button>
+        </nav>
 
-            <div class="card">
-                <h2 class="game-title">尋訪千塘鄉~埤塘守護者</h2>
-                <a href="https://ayjong.my.canva.site/pitang-knowledge-encyclopedia" target="_blank" class="btn-glass">開始遊戲</a>
-            </div>
+        <main>
+            <!-- 【教育遊戲區】 -->
+            <section id="games-section" class="content-section">
+                <div class="grid-layout">
+                    
+                    <div class="card">
+                        <h2 class="card-title">我的好朋友聚會策劃師</h2>
+                        <a href="https://essay-correcting-ai.my.canva.site/dags6yo-nlk" target="_blank" class="btn-glass">開始遊戲</a>
+                    </div>
+                    <div class="card">
+                        <h2 class="card-title">尋訪千塘鄉~埤塘守護者</h2>
+                        <a href="https://ayjong.my.canva.site/pitang-knowledge-encyclopedia" target="_blank" class="btn-glass">開始遊戲</a>
+                    </div>
+                    <div class="card">
+                        <h2 class="card-title">新希望的奇幻之旅</h2>
+                        <a href="https://ai345.my.canva.site/114ch201" target="_blank" class="btn-glass">開始遊戲</a>
+                    </div>
+                    <div class="card">
+                        <h2 class="card-title">古文解謎之旅</h2>
+                        <a href="https://snowball18.my.canva.site/dags6zfk5xy" target="_blank" class="btn-glass">開始遊戲</a>
+                    </div>
+                    <div class="card">
+                        <h2 class="card-title">形容詞子句</h2>
+                        <a href="https://rubyliu.my.canva.site/dags6-tluq" target="_blank" class="btn-glass">開始遊戲</a>
+                    </div>
+                    <div class="card">
+                        <h2 class="card-title">生命奇遇記：地球小尖兵養成計畫</h2>
+                        <a href="https://shenao.my.canva.site/dags6ytpzc0" target="_blank" class="btn-glass">開始遊戲</a>
+                    </div>
+                    <div class="card">
+                        <h2 class="card-title">雪梨親子旅遊</h2>
+                        <a href="https://bearpan9.my.canva.site/dags62nq40u" target="_blank" class="btn-glass">開始遊戲</a>
+                    </div>
+                    <div class="card">
+                        <h2 class="card-title">大坑步道探險家</h2>
+                        <a href="https://c-f-chuo-s-class.my.canva.site/dags6x37aew" target="_blank" class="btn-glass">開始遊戲</a>
+                    </div>
+                    <div class="card">
+                        <h2 class="card-title">節慶特色遊戲</h2>
+                        <a href="https://fongjean0213.my.canva.site/dags628etc8" target="_blank" class="btn-glass">開始遊戲</a>
+                    </div>
+                    <div class="card">
+                        <h2 class="card-title">AI 教育先鋒 Gemini & NotebookLM 實戰演練</h2>
+                        <a href="https://bearitw.my.canva.site/gemini-notebooklm" target="_blank" class="btn-glass">開始遊戲</a>
+                    </div>
+                    <div class="card">
+                        <h2 class="card-title">高雄夜市美食</h2>
+                        <a href="https://khfood.my.canva.site/" target="_blank" class="btn-glass">開始遊戲</a>
+                    </div>
+                    <div class="card">
+                        <h2 class="card-title">小文具觀察大冒險</h2>
+                        <a href="https://www.canva.com/design/DAGs6zNYJKI/bdIJ313bcczMnt-PVbsnUg/edit?utm_content=DAGs6zNYJKI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="btn-glass">開始遊戲</a>
+                    </div>
+                    <div class="card">
+                        <h2 class="card-title">馬偕的愛心足跡 淡水學習之旅</h2>
+                        <a href="https://cutebird.my.canva.site/dags6-yq9vs" target="_blank" class="btn-glass">開始遊戲</a>
+                    </div>
+                    <div class="card">
+                        <h2 class="card-title">青春晃遊：十七歲的選擇題</h2>
+                        <a href="https://gawa1.my.canva.site/dags64u98ss" target="_blank" class="btn-glass">開始遊戲</a>
+                    </div>
+                    <div class="card">
+                        <h2 class="card-title">小文具觀察大冒險</h2>
+                        <a href="https://jhpiao.my.canva.site/" target="_blank" class="btn-glass">開始遊戲</a>
+                    </div>
+                    <div class="card">
+                        <h2 class="card-title">網路安全守護者</h2>
+                        <a href="https.poe.com/AppNUMV02H9U5" target="_blank" class="btn-glass">開始遊戲</a>
+                    </div>
+                    <div class="card">
+                        <h2 class="card-title">肉毒桿菌毒素防護大作戰</h2>
+                        <a href="https.poe.com/AppSPUYCF95T7" target="_blank" class="btn-glass">開始遊戲</a>
+                    </div>
 
-            <div class="card">
-                <h2 class="game-title">新希望的奇幻之旅</h2>
-                <a href="https://ai345.my.canva.site/114ch201" target="_blank" class="btn-glass">開始遊戲</a>
-            </div>
+                </div>
+            </section>
 
-            <div class="card">
-                <h2 class="game-title">古文解謎之旅</h2>
-                <a href="https://snowball18.my.canva.site/dags6zfk5xy" target="_blank" class="btn-glass">開始遊戲</a>
-            </div>
+            <!-- 【教育AI ChatBOT區】 -->
+            <section id="chatbots-section" class="content-section">
+                <div class="grid-layout">
+                    
+                    <div class="card">
+                        <h2 class="card-title">SEL安心姐姐</h2>
+                        <p class="card-description">為低年級學生設計，在安心的環境中，學習社交與情緒管理(SEL)。</p>
+                        <a href="https://poe.com/SEL-Teacher20250712" target="_blank" class="btn-glass">開始對話</a>
+                    </div>
+                    <div class="card">
+                        <h2 class="card-title">排序演算法學習小夥伴</h2>
+                        <p class="card-description">專為國中八年級學生設計，清晰解釋排序演算法的核心觀念與規則。</p>
+                        <a href="https://app.edcafe.ai/chatbots/68720e30446acc859b863bea" target="_blank" class="btn-glass">開始對話</a>
+                    </div>
+                    <div class="card">
+                        <h2 class="card-title">作文小幫手 (難忘的旅行)</h2>
+                        <p class="card-description">引導國小中年級學生，以「一次難忘的旅行」為題，一步步完成作文。</p>
+                        <a href="https://poe.com/BotZIK6MCFYAF" target="_blank" class="btn-glass">開始對話</a>
+                    </div>
+                    <div class="card">
+                        <h2 class="card-title">Grendel 遊戲規則導師</h2>
+                        <p class="card-description">《Grendel》桌遊的 AI 規則大師，透過引導式學習，幫助玩家熟悉遊戲規則與流程。</p>
+                        <a href="https://poe.com/Echo_of_Grendel" target="_blank" class="btn-glass">開始對話</a>
+                    </div>
+                    <div class="card">
+                        <h2 class="card-title">教案目標小助手</h2>
+                        <p class="card-description">協助老師們設定清晰、有效的教案教學目標，提升課程設計品質。</p>
+                        <a href="https://poe.com/114boot" target="_blank" class="btn-glass">開始對話</a>
+                    </div>
+                    <div class="card">
+                        <h2 class="card-title">SEL-情緒小幫手</h2>
+                        <p class="card-description">一個很喜歡聽你說話的朋友，無論開心、生氣或難過，都願意在這裡陪你聊聊。</p>
+                        <a href="https://poe.com/SEL1" target="_blank" class="btn-glass">開始對話</a>
+                    </div>
+                    <div class="card">
+                        <h2 class="card-title">數學學習打氣筒</h2>
+                        <p class="card-description">當你覺得數學很難、快要放棄時，來這裡聊一聊，為自己打打氣，重新找回信心。</p>
+                        <a href="https://poe.com/sdflkvanjkld" target="_blank" class="btn-glass">開始對話</a>
+                    </div>
+                    <div class="card">
+                        <h2 class="card-title">小新心</h2>
+                        <p class="card-description">當你心中有事想聊聊，這裡提供溫柔的陪伴和傾聽，幫助你換一種心態面對。</p>
+                        <a href="https://poe.com/Emotionfree" target="_blank" class="btn-glass">開始對話</a>
+                    </div>
+                    <div class="card">
+                        <h2 class="card-title">節慶智慧長者</h2>
+                        <p class="card-description">如同一位承載千年文化智慧的長者，為學生們詳細解說各個節慶的由來與習俗。</p>
+                        <a href="https://poe.com/BotOAIE67I6DC" target="_blank" class="btn-glass">開始對話</a>
+                    </div>
+                    <div class="card">
+                        <h2 class="card-title">排序演算法小老師</h2>
+                        <p class="card-description">專為國中生設計，幫助理解資訊科技課中，程式設計的排序演算法。</p>
+                        <a href="https://poe.com/SortAlgorithm.0712" target="_blank" class="btn-glass">開始對話</a>
+                    </div>
+                    <div class="card">
+                        <h2 class="card-title">圖像摘要小幫手</h2>
+                        <p class="card-description">分析圖片內容，並快速生成摘要，幫助你理解圖像中的關鍵資訊。</p>
+                        <a href="https://poe.com/BotSYYUWL8Y2Y" target="_blank" class="btn-glass">開始對話</a>
+                    </div>
+                    <div class="card">
+                        <h2 class="card-title">點點偵探數學四則運算</h2>
+                        <p class="card-description">嗨！我是點點偵探，你的數學解謎好夥伴！今天有什麼四則運算的謎題需要我們一起破解呢？把題目給我吧！</p>
+                        <a href="https://poe.com/Hsu-Math" target="_blank" class="btn-glass">開始對話</a>
+                    </div>
+                  <div class="card">
+                        <h2 class="card-title">PBL活動引導</h2>
+                        <p class="card-description">我的任務是將這份詳盡的設計藍圖，優化成一個更精煉、結構化，能讓 AI 更穩定、準確地執行的「系統提示詞 (System Prompt)」。優化的目標是保留您設計的精髓（同理心、引導、PBL流程），同時轉換為 AI 更容易理解和遵循的指令格式。</p>
+                        <a href="https://poe.com/PBL-agatha" target="_blank" class="btn-glass">開始對話</a>
+                    </div>
 
-            <div class="card">
-                <h2 class="game-title">形容詞子句</h2>
-                <a href="https://rubyliu.my.canva.site/dags6-tluq" target="_blank" class="btn-glass">開始遊戲</a>
-            </div>
-
-            <div class="card">
-                <h2 class="game-title">生命奇遇記：地球小尖兵養成計畫</h2>
-                <a href="https://shenao.my.canva.site/dags6ytpzc0" target="_blank" class="btn-glass">開始遊戲</a>
-            </div>
-            
-            <div class="card">
-                <h2 class="game-title">雪梨親子旅遊</h2>
-                <a href="https://bearpan9.my.canva.site/dags62nq40u" target="_blank" class="btn-glass">開始遊戲</a>
-            </div>
-
-            <div class="card">
-                <h2 class="game-title">大坑步道探險家</h2>
-                <a href="https://c-f-chuo-s-class.my.canva.site/dags6x37aew" target="_blank" class="btn-glass">開始遊戲</a>
-            </div>
-
-            <div class="card">
-                <h2 class="game-title">節慶特色遊戲</h2>
-                <a href="https://fongjean0213.my.canva.site/dags628etc8" target="_blank" class="btn-glass">開始遊戲</a>
-            </div>
-
-            <div class="card">
-                <h2 class="game-title">AI 教育先鋒 Gemini & NotebookLM 實戰演練</h2>
-                <a href="https://bearitw.my.canva.site/gemini-notebooklm" target="_blank" class="btn-glass">開始遊戲</a>
-            </div>
-
-            <div class="card">
-                <h2 class="game-title">高雄夜市美食</h2>
-                <a href="https://khfood.my.canva.site/" target="_blank" class="btn-glass">開始遊戲</a>
-            </div>
-
-            <div class="card">
-                <h2 class="game-title">小文具觀察大冒險</h2>
-                <a href="https://www.canva.com/design/DAGs6zNYJKI/bdIJ313bcczMnt-PVbsnUg/edit?utm_content=DAGs6zNYJKI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="btn-glass">開始遊戲</a>
-            </div>
-
-            <div class="card">
-                <h2 class="game-title">馬偕的愛心足跡 淡水學習之旅</h2>
-                <a href="https://cutebird.my.canva.site/dags6-yq9vs" target="_blank" class="btn-glass">開始遊戲</a>
-            </div>
-
-            <div class="card">
-                <h2 class="game-title">青春晃遊：十七歲的選擇題</h2>
-                <a href="https://gawa1.my.canva.site/dags64u98ss" target="_blank" class="btn-glass">開始遊戲</a>
-            </div>
-
-            <div class="card">
-                <h2 class="game-title">小文具觀察大冒險</h2>
-                <a href="https://jhpiao.my.canva.site/" target="_blank" class="btn-glass">開始遊戲</a>
-            </div>
-
-            <div class="card">
-                <h2 class="game-title">網路安全守護者</h2>
-                <a href="https.poe.com/AppNUMV02H9U5" target="_blank" class="btn-glass">開始遊戲</a>
-            </div>
-
-            <div class="card">
-                <h2 class="game-title">肉毒桿菌毒素防護大作戰</h2>
-                <a href="https.poe.com/AppSPUYCF95T7" target="_blank" class="btn-glass">開始遊戲</a>
-            </div>
-
+                </div>
+            </section>
         </main>
     </div>
+
+    <script>
+        const gamesBtn = document.getElementById('btn-games');
+        const chatbotsBtn = document.getElementById('btn-chatbots');
+        const gamesSection = document.getElementById('games-section');
+        const chatbotsSection = document.getElementById('chatbots-section');
+
+        // Default view
+        gamesBtn.classList.add('active');
+        gamesSection.classList.add('active');
+
+        gamesBtn.addEventListener('click', () => {
+            chatbotsSection.classList.remove('active');
+            gamesSection.classList.add('active');
+            chatbotsBtn.classList.remove('active');
+            gamesBtn.classList.add('active');
+        });
+
+        chatbotsBtn.addEventListener('click', () => {
+            gamesSection.classList.remove('active');
+            chatbotsSection.classList.add('active');
+            gamesBtn.classList.remove('active');
+            chatbotsBtn.classList.add('active');
+        });
+    </script>
     
 </body>
 </html>
